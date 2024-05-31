@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArenaGame.Weapons
 {
-    public class HighmoonBlade : IWeapon
+    public class HighmoonBlade : ISpecialWeapon
     {
         public string Name { get; set; }
 
@@ -21,7 +21,7 @@ namespace ArenaGame.Weapons
             BlockingPower = 10;
         }
 
-        public void ActivateHighMoon() {
+        public void ActivateSpecialPower() {
             AttackDamage *= 2;
             BlockingPower *= 1.2;
         }
