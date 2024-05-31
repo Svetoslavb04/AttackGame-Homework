@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArenaGame.Weapons
 {
-    public class Shield : IWeapon
+    public class Shield : ISpecialWeapon
     {
         private double blockingPower;
 
@@ -36,8 +36,12 @@ namespace ArenaGame.Weapons
             BlockingPower = 100;
         }
         
-        public void Strengthen(double blockingPower) {
+        private void Strengthen(double blockingPower) {
             BlockingPower += blockingPower;
+        }
+
+         public void ActivateSpecialPower() {
+            Strengthen(10);
         }
     }
 }
