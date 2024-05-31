@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArenaGame.Weapons
 {
-    public class Bow : IWeapon
+    public class Bow : ISpecialWeapon
     {
         private double attackDamage;
 
@@ -39,6 +39,10 @@ namespace ArenaGame.Weapons
             Name = name;
             AttackDamage = 20;
             BlockingPower = 10;
+        }
+
+        public void ActivateSpecialPower() {
+            Arrows += 2;
         }
         
     }
