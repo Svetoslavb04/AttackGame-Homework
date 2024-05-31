@@ -36,6 +36,11 @@ namespace ArenaGame
         // returns actual damage
         public virtual double Attack()
         {
+            if (Weapon is ISpecialWeapon specialWeapon)
+            {
+                specialWeapon.ActivateSpecialPower();
+            }
+
             double totalDamage = Strenght + Weapon.AttackDamage;
             double coef = random.Next(80, 120 + 1);
             double realDamage = totalDamage * (coef / 100);
@@ -44,6 +49,11 @@ namespace ArenaGame
 
         public virtual double Defend(double damage)
         {
+            if (Weapon is ISpecialWeapon specialWeapon)
+            {
+                specialWeapon.ActivateSpecialPower();
+            }
+            
             double coef = random.Next(80, 120 + 1);
             double defendPower = (Armor + Weapon.BlockingPower) * (coef / 100);
             double realDamage = damage - defendPower;
